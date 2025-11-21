@@ -1,0 +1,73 @@
+/* Styling Requirements: CSS Variables & Smooth Scrolling */
+:root {
+    /* REQUIRED: Color theme using variables */
+    --primary-color: #ff7b00;
+    --background-color: #a5abb1;
+    --text-color: #4fa0f0;
+    --card-background: #ffffff;
+    --hover-shadow: rgba(255, 0, 106, 0.685);
+    --spacing-md: 15px;
+}
+
+/* REQUIRED: Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global Reset for box-sizing */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+/* REQUIRED: Simple Animation (Applied to Hero Content) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-section h1 { /* Targeting the main headline */
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0; /* Start invisible */
+}
+/* REQUIRED: Hover effects on buttons */
+.button {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px var(--hover-shadow);
+}
+
+/* REQUIRED: Hover effects on project cards */
+.project-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+/* REQUIRED: Use media queries for mobile, tablet, and desktop */
+
+/* Tablet View (Screens >= 768px) */
+@media (min-width: 768px) {
+    /* Switches Projects to 2 columns */
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Switches About Section to side-by-side Flexbox layout */
+    .about-content-wrapper {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Desktop View (Screens >= 1200px) */
+@media (min-width: 1100px) {
+    /* Switches Projects to 3 columns */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
