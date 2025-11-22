@@ -1,11 +1,11 @@
 /* Styling Requirements: CSS Variables & Smooth Scrolling */
 :root {
     /* REQUIRED: Color theme using variables */
-    --primary-color: #ff7b00;
+    --primary-color: #08341aec;
     --background-color: #a5abb1;
-    --text-color: #4fa0f0;
+    --text-color: #378de3;
     --card-background: #ffffff;
-    --hover-shadow: rgba(255, 0, 106, 0.685);
+    --hover-shadow: rgba(214, 27, 105, 0.685);
     --spacing-md: 15px;
 }
 
@@ -47,7 +47,7 @@ html {
 }
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(170, 28, 28, 0.15);
 }
 /* REQUIRED: Use media queries for mobile, tablet, and desktop */
 
@@ -61,7 +61,7 @@ html {
     .about-content-wrapper {
         display: flex;
         gap: var(--spacing-md);
-    }
+   }
 }
 
 /* Desktop View (Screens >= 1200px) */
@@ -70,4 +70,36 @@ html {
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+/* --- Navigation Styling for .main-navigation --- */
+
+/* 1. Make the list horizontal and remove default browser styling */
+.main-navigation ul {
+    list-style: none; /* Removes bullets */
+    padding: 1; 
+    margin: 1;
+    display: flex; /* Arranges list items horizontally */
+    background-color: #333333fe; /* Dark background color for the nav bar */
+}
+
+/* 2. Add space between the list items */
+.main-navigation li {
+    margin: 10px; 
+}
+
+/* 3. Style the links (Anchor tags) */
+.main-navigation a {
+    color: rgb(14, 27, 99); /* Text color */
+    text-decoration:none; /* Removes underline */
+    display: block; /* Makes the entire area clickable */
+    padding: 15px 10px; /* Adds space around the text */
+    font-size: 2em;
+    font-weight: 500000;
+    transition: background-color 0.4s; /* Smooth hover effect */
+}
+
+/* 4. Hover effect for user feedback */
+.main-navigation a:hover
+.main-navigation a:focus {
+    background-color: #073566; /* Changes background color on hover */
 }
